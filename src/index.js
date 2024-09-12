@@ -33,7 +33,7 @@ async function createLabel(name, color, description) {
     })
     const colorStyled = chalk.bgRgb(r, g, b).black(`   `)
     console.log(
-      `Created successfully!\n---------\nInformation\nLabel: "${name}"\nColor: ${color} ${colorStyled}\nDescription: ${description}\n---------\n`,
+      `Created label: "${name}" | Color: ${color} ${colorStyled} | Description: ${description}`,
     )
   } catch (error) {
     console.error(`Error creating label "${name}":`)
@@ -64,11 +64,49 @@ async function updateLabel(name, newName, color, description) {
     })
     const colorStyled = chalk.bgRgb(r, g, b).black(`   `)
     console.log(
-      `Updated successfully!\n---------\nInformation\nLabels: (Old) "${name}" → (New) "${newName}"\nColor: ${color} ${colorStyled}\nDescription: ${description}\n---------\n`,
+      `Updated label: "${name}" to "${newName}" | Color: ${color} ${colorStyled} | Description: ${description}`,
     )
   } catch (error) {
     console.error(`Error updating label "${name}":`)
     console.error(error.response?.data || error.message)
+  }
+}
+
+/**
+ * `deleteAllLabels` deletes all labels in the GitHub repository.
+ */
+async function deleteAllLabels() {
+  try {
+    // Fetch all labels
+    const { data: labels } = await octokit.request("GET /repos/{owner}/{repo}/labels", {
+      owner: OWNER,
+      repo: REPO,
+    })
+
+    if (labels.length === 0) {
+      console.log("No labels found in the repository.")
+      return
+    }
+
+    // Delete each label
+    for (const label of labels) {
+      try {
+        await octokit.request("DELETE /repos/{owner}/{repo}/labels/{name}", {
+          owner: OWNER,
+          repo: REPO,
+          name: label.name,
+        })
+        console.log(`Deleted label: "${label.name}"`)
+      } catch (error) {
+        console.error(`Error deleting label "${label.name}":`)
+        console.error(error.response?.data || error.message)
+      }
+    }
+
+    console.log("All labels deleted successfully!")
+  } catch (error) {
+    console.error("Error fetching or deleting labels:")
+    console.error(error.message)
   }
 }
 
@@ -140,6 +178,7 @@ program.option(
   "--update <name> <newName> <color> [description...]",
   "Update an existing label in the GitHub repository",
 )
+program.option("--delete-all", "Delete all labels in the GitHub repository")
 program.option("--multiple", "Create multiple labels from data/labels.json")
 program.option("--generate-copy", "Generate a copy of all labels and save to a JSON file")
 
@@ -147,22 +186,37 @@ program.parse(process.argv)
 
 const options = program.opts()
 
-if (options.create) {
-  const [name, color, ...descriptionParts] = options.create
-  const description = descriptionParts.join(" ")
-  createLabel(name, color, description)
-}
+switch (true) {
+  case !!options.create: {
+    const [name, color, ...descriptionParts] = options.create
+    const description = descriptionParts.join(" ")
+    createLabel(name, color, description)
+    break
+  }
 
-if (options.update) {
-  const [name, newName, color, ...descriptionParts] = options.update
-  const description = descriptionParts.join(" ")
-  updateLabel(name, newName, color, description)
-}
+  case !!options.update: {
+    const [name, newName, color, ...descriptionParts] = options.update
+    const description = descriptionParts.join(" ")
+    updateLabel(name, newName, color, description)
+    break
+  }
 
-if (options.multiple) {
-  createMultipleLabels()
-}
+  case !!options.deleteAll: {
+    deleteAllLabels()
+    break
+  }
 
-if (options.generateCopy) {
-  generateLabelCopy()
+  case !!options.multiple: {
+    createMultipleLabels()
+    break
+  }
+
+  case !!options.generateCopy: {
+    generateLabelCopy()
+    break
+  }
+
+  default:
+    console.log("No valid option selected.")
+    program.help()
 }
