@@ -1,0 +1,30 @@
+{
+  "name": "label-manager",
+  "description": "",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noeyislearning/label-manager.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Label",
+    "Manager"
+  ],
+  "author": "Noey Ignacio",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/noeyislearning/label-manager/issues"
+  },
+  "homepage": "https://github.com/noeyislearning/label-manager#readme",
+  "scripts": {
+    "dev": "node index.js"
+  }
+}
