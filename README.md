@@ -11,7 +11,15 @@
 
 A command-line tool designed to simplify and automate the management of GitHub repository labels. This tool streamlines the process of creating, updating, deleting, and copying labels, making it easier to maintain organized and consistent label structures across your projects.
 
-## Features
+## 🔥 Activity
+
+<div style="width: 100%">
+
+![Alt](https://repobeats.axiom.co/api/embed/f818f5f7da9db323a050f1cb3d981968c342a9a9.svg "Repobeats analytics image")
+
+</div>
+
+## ⚙️ Features
 
 1. **Create Labels**
 
@@ -33,9 +41,13 @@ A command-line tool designed to simplify and automate the management of GitHub r
 
    Export a copy of all labels in a repository to a JSON file. The file is automatically named with the current date and a random suffix to ensure uniqueness.
 
-## Installation
+## 🔨 Installation
 
-1. **Clone the Repository**
+1. **Install Bun**
+
+   Refer to [Bun's official documentation](https://bun.sh/docs) for installation instructions.
+
+2. **Clone the Repository**
 
    Clone the repository to your local machine using the following command:
 
@@ -44,7 +56,7 @@ A command-line tool designed to simplify and automate the management of GitHub r
    $ cd label-manager
    ```
 
-2. **Install Dependencies**
+3. **Install Dependencies**
 
    Install the required dependencies using the following command:
 
@@ -52,7 +64,7 @@ A command-line tool designed to simplify and automate the management of GitHub r
    $ bun install
    ```
 
-3. Set up your environment variables. Create a `.env` file with the following content:
+4. Set up your environment variables. Create a `.env` file with the following content:
 
    ```bash
    GITHUB_TOKEN=your_github_token
@@ -62,7 +74,9 @@ A command-line tool designed to simplify and automate the management of GitHub r
 
    Replace `your_github_token` with a valid GitHub personal access token, `your_repo_owner` with the name of the repository owner, and `your_repo_name` with the name of the repository.
 
-## Usage
+   - To get a GitHub personal access token, follow the instructions [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+
+## 🌴 Usage
 
 After installing the dependencies and setting up the environment variables, you can run the tool by executing the following command:
 
@@ -78,9 +92,9 @@ You will be prompted with a menu of actions to choose from:
 - `Create multiple labels`: Load and create multiple labels from a predefined `labels.json` file.
 - `Generate a copy of labels`: Export all labels from your repository to a `.json` file saved in the `copies` directory.
 
-## Example Commands
+### Example Commands
 
-**Creating Multiple Labels**
+#### Creating Multiple Labels
 
 For bulk label creation, prepare a `labels.json` file with the following format:
 
@@ -101,11 +115,11 @@ For bulk label creation, prepare a `labels.json` file with the following format:
 
 Place this file in the `data/` directory and run the tool with the "Create multiple labels" option.
 
-**Generating a Copy of Labels**
+#### Generating a Copy of Labels
 
 This feature will save all current labels into a file with a name in the format `MMDDYYYY<random_number>.json` in the `copies/` directory.
 
-## Future Enhancements
+## 🚧 Future Enhancements
 
 - [ ] Ability to delete a specific label instead of all labels.
 - [ ] Update multiple labels from a file similar to bulk creation.
