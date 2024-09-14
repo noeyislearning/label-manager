@@ -1,4 +1,4 @@
-![changelog-banner](https://i.imgur.com/Kl4I1do.png)
+![changelog-banner](https://i.imgur.com/McOiV7q.png)
 
 This project follows the [Semantic Versioning](https://semver.org/) guidelines for versioning. The changelog provides a summary of the changes made in each version of the project, including new features, bug fixes, and other updates.
 
