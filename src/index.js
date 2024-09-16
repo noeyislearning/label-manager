@@ -1,6 +1,7 @@
 import inquirer from "inquirer"
-import { createLabel } from "./operations/create.js"
-import { updateLabel } from "./operations/update.js"
+import { createOneLabel } from "./operations/create-one.js"
+import { updateOneLabel } from "./operations/update-one.js"
+import { deleteOneLabel } from "./operations/delete-one.js"
 import { deleteAllLabels } from "./operations/delete-all.js"
 import { createMultipleLabels } from "./operations/create-multiple.js"
 import { generateLabelCopy } from "./operations/generate-copy.js"
@@ -14,6 +15,7 @@ async function mainMenu() {
       choices: [
         "Create a label",
         "Update a label",
+        "Delete a label",
         "Delete all labels",
         "Create multiple labels",
         "Generate a copy of labels",
@@ -28,7 +30,7 @@ async function mainMenu() {
         { type: "input", name: "color", message: "Label color (hex):" },
         { type: "input", name: "description", message: "Label description:" },
       ])
-      await createLabel(name, color, description)
+      await createOneLabel(name, color, description)
       break
 
     case "Update a label":
@@ -38,7 +40,14 @@ async function mainMenu() {
         { type: "input", name: "updateColor", message: "New label color (hex):" },
         { type: "input", name: "updateDescription", message: "New label description:" },
       ])
-      await updateLabel(currentName, newName, updateColor, updateDescription)
+      await updateOneLabel(currentName, newName, updateColor, updateDescription)
+      break
+
+    case "Delete a label":
+      const { deleteName } = await inquirer.prompt([
+        { type: "input", name: "deleteName", message: "Label name to delete:" },
+      ])
+      await deleteOneLabel(deleteName)
       break
 
     case "Delete all labels":

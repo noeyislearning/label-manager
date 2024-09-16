@@ -7,7 +7,7 @@ const octokit = new Octokit({
   auth: GITHUB_TOKEN,
 })
 
-export async function updateLabel(name, newName, color, description) {
+export async function updateOneLabel(name, newName, color, description) {
   try {
     const [r, g, b] = hexToRgb(color)
     await octokit.request("PATCH /repos/{owner}/{repo}/labels/{name}", {

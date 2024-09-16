@@ -5,7 +5,7 @@ const octokit = new Octokit({
   auth: GITHUB_TOKEN,
 })
 
-export async function createLabel(name, color, description) {
+export async function createOneLabel(name, color, description) {
   try {
     await octokit.request("POST /repos/{owner}/{repo}/labels", {
       owner: OWNER,
