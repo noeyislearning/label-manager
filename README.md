@@ -21,25 +21,17 @@ A command-line tool designed to simplify and automate the management of GitHub r
 
 ## ⚙️ Features
 
-1. **Create Labels**
+1. **Create Label** - Easily create new label in your GitHub repository by specifying the label name, color (hex code), and description.
 
-   Easily create new labels in your GitHub repository by specifying the label name, color (hex code), and description.
+2. **Update Label** - Modify existing label with new name, color, or description. This helps in refining the categorization of issues and PRs without losing their historical context.
 
-2. **Update Labels**
+3. **Delete Label** - Remove a specific label from the repository by providing the label name.
 
-   Modify existing labels with new names, colors, or descriptions. This helps in refining the categorization of issues and PRs without losing their historical context.
+4. **Delete All Labels** - Quickly delete all labels from the repository. A confirmation prompt is provided to ensure accidental deletions are avoided.
 
-3. **Delete All Labels**
+5. **Create Multiple Labels** - Import a list of labels from a labels.json file and automatically create them in your repository. This feature saves time when initializing projects or applying standard label sets.
 
-   Quickly delete all labels from the repository. A confirmation prompt is provided to ensure accidental deletions are avoided.
-
-4. **Create Multiple Labels**
-
-   Import a list of labels from a labels.json file and automatically create them in your repository. This feature saves time when initializing projects or applying standard label sets.
-
-5. **Generate Label Copy**
-
-   Export a copy of all labels in a repository to a JSON file. The file is automatically named with the current date and a random suffix to ensure uniqueness.
+6. **Generate Label Copy** - Export a copy of all labels in a repository to a JSON file. The file is automatically named with the current date and a random suffix to ensure uniqueness.
 
 ## 🔨 Installation
 
@@ -124,3 +116,4 @@ This feature will save all current labels into a file with a name in the format 
 - [ ] Ability to delete a specific label instead of all labels.
 - [ ] Update multiple labels from a file similar to bulk creation.
 - [ ] Sync labels across multiple repositories for consistency.
+- [ ] A confirmation prompt is displayed to prevent accidental deletions.
