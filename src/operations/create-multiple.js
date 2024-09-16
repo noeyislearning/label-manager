@@ -1,6 +1,6 @@
 import fs from "fs"
 import path from "path"
-import { createLabel } from "./create.js"
+import { createOneLabel } from "./create-one.js"
 
 export async function createMultipleLabels() {
   const filePath = path.resolve("data", "labels.json")
@@ -11,7 +11,7 @@ export async function createMultipleLabels() {
     let createdCount = 0
     for (const label of labels) {
       try {
-        await createLabel(label.name, label.color, label.description)
+        await createOneLabel(label.name, label.color, label.description)
         createdCount++
       } catch (error) {
         console.error(`Error creating label "${label.name}":`)
