@@ -1,33 +1,30 @@
 {
   "name": "label-manager",
-  "description": "",
-  "type": "module",
   "version": "1.0.0",
-  "main": "index.js",
-  "devDependencies": {},
-  "dependencies": {
-    "@octokit/rest": "^21.0.2",
-    "chalk": "^5.3.0",
-    "commander": "^12.1.0",
-    "dotenv": "^16.4.5",
-    "inquirer": "^10.2.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/noeyislearning/label-manager.git"
-  },
+  "description": "To make it easy for you to get started with GitLab, here's a list of recommended next steps.",
   "keywords": [
     "GitHub",
     "Label",
     "Manager"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noeyislearning/label-manager"
+  },
+  "type": "module",
+  "main": "index.js",
   "author": "Noey Ignacio",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/noeyislearning/label-manager/issues"
-  },
-  "homepage": "https://github.com/noeyislearning/label-manager#readme",
   "scripts": {
     "start": "node src/index.js"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@octokit/rest": "^21.0.2",
+    "axios": "^1.7.7",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "inquirer": "^10.2.2"
   }
 }
