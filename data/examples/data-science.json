@@ -1,0 +1,102 @@
+[
+  {
+    "name": "(ds) data analysis",
+    "color": "00BFFF",
+    "description": "Tasks related to analyzing, interpreting, and understanding data."
+  },
+  {
+    "name": "(ds) data quality",
+    "color": "FFD700",
+    "description": "Issues related to data quality, cleanliness, or accuracy."
+  },
+  {
+    "name": "(ds) experimentation",
+    "color": "FFC0CB",
+    "description": "Tasks related to conducting experiments or testing different approaches."
+  },
+  {
+    "name": "(ds) model evaluation",
+    "color": "FFA500",
+    "description": "Tasks related to evaluating the performance of machine learning models."
+  },
+  {
+    "name": "(ds) model training",
+    "color": "90EE90",
+    "description": "Issues related to training machine learning models."
+  },
+  {
+    "name": "(ds) visualization",
+    "color": "FF8C00",
+    "description": "Issues related to data visualization and creating charts or graphs."
+  },
+  {
+    "name": "bug",
+    "color": "FFB6C1",
+    "description": "A defect or error in the software."
+  },
+  {
+    "name": "continuous",
+    "color": "FF6600",
+    "description": "Issues related to improving continuously."
+  },
+  {
+    "name": "deployment",
+    "color": "66CDAA",
+    "description": "Issues related to deploying into production"
+  },
+  {
+    "name": "documentation",
+    "color": "A7C7E7",
+    "description": "Improvements or additions to existing documentation."
+  },
+  {
+    "name": "duplicate",
+    "color": "E0E0E0",
+    "description": "This issue or pull request already exists."
+  },
+  {
+    "name": "enhancement",
+    "color": "B5E0C3",
+    "description": "Improvement to existing functionality."
+  },
+  {
+    "name": "feature",
+    "color": "90EE90",
+    "description": "A new feature that is being developed."
+  },
+  {
+    "name": "help wanted",
+    "color": "F7DC6F",
+    "description": "This issue requires extra attention or expertise."
+  },
+  {
+    "name": "infrastructure",
+    "color": "808080",
+    "description": "Issues related to the underlying infrastructure or tools used."
+  },
+  {
+    "name": "invalid",
+    "color": "E9967A",
+    "description": "This issue is not valid or relevant."
+  },
+  {
+    "name": "maintenance",
+    "color": "D3D3D3",
+    "description": "Tasks related to maintaining and updating existing code or models."
+  },
+  {
+    "name": "question",
+    "color": "B0D4F1",
+    "description": "Further information is needed to resolve the issue."
+  },
+  {
+    "name": "research",
+    "color": "93C572",
+    "description": "Tasks related to exploring new research areas or techniques."
+  },
+  {
+    "name": "wontfix",
+    "color": "D9D9D9",
+    "description": "This issue will not be addressed."
+  }
+]
